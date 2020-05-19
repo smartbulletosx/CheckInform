@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myfile">
+    <button type="submit">Upload</button>
+  </form>
+  {% if res != "" %}
+    <p>File uploaded </p>
+     <textarea cols="40" rows="3">{{ res }}</textarea>
+  {% endif %}
+{% endblock %}
+</body>
+</html>
